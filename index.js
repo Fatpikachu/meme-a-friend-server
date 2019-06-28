@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3008;
+const port = process.env.PORT || 3008;
 const cors = require('cors');
 const fetch = require('node-fetch');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -56,6 +56,10 @@ app.get('/gallery', async (req, res) => {
       res.json(images);
     })
 })
+
+app.get('/test', (req, res) => {
+  res.json("HI");
+});
 
 const server = app.listen(port, () => {
   console.log(`Starting the server at port ${port}`);
