@@ -10,9 +10,9 @@ app.use(cors());
 
 //twilio
 const twilio = require('twilio');
-const { accountSid, authToken } = require('../src/config');
+const { accountSid, authToken } = require('/config');
 const client = new twilio(accountSid, authToken)
-const { IMGUR_ID } = require('../src/config');
+const { IMGUR_ID } = require('/config');
 
 
 
