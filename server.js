@@ -23,13 +23,16 @@ app.get('/send-text', async (req, res) => {
     body: textMsg,
     to: recipient,
     from: '14159410232'
-  })
+  }).then(() => 
+    res.send(200) 
+  ).catch(() => 
+    res.send(400)
+  )
 
 })
 
 app.get('/comments', async (req, res) => {
   const { id } = req.query;
-  
   fetch(`https://api.imgur.com/3/gallery/${id}/comments/best`, {
       headers: {
         "Authorization": 'Client-ID ' + IMGUR_ID,
@@ -53,6 +56,7 @@ app.get('/gallery', async (req, res) => {
       imgData.json()
     )
     .then((images) => {
+      console.log('the imageess: ', images)
       res.json(images);
     })
 })
@@ -62,7 +66,7 @@ app.get('/test', (req, res) => {
 });
 
 const server = app.listen(port, () => {
-  console.log(`Starting the server at port ${port}`);
+  console.log(`Starting the server at portt ${port}`);
 });
 
 module.exports = app;
