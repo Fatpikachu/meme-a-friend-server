@@ -14,6 +14,7 @@ const { accountSid, authToken } = require('./config');
 const client = new twilio(accountSid, authToken)
 const { IMGUR_ID } = require('./config');
 
+// app.use('/', express.static(path.join(__dirname, 'dist')))
 
 
 app.get('/send-text', async (req, res) => {
@@ -24,9 +25,9 @@ app.get('/send-text', async (req, res) => {
     to: recipient,
     from: '14159410232'
   }).then(() => 
-    res.send(200) 
+    res.sendStatus(200) 
   ).catch(() => 
-    res.send(400)
+    res.sendStatus(400)
   )
 
 })
