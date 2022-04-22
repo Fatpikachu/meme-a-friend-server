@@ -19,7 +19,7 @@ const { IMGUR_ID } = require('./config');
 
 app.get('/send-text', async (req, res) => {
   const { recipient, textMsg} = req.query;
-
+  console.log('send-text~, ', recipient, textMsg);
   client.messages.create({
     body: textMsg,
     to: recipient,
