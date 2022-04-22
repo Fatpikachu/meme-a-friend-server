@@ -29,7 +29,6 @@ app.get('/send-text', async (req, res) => {
   ).catch(() => 
     res.sendStatus(400)
   )
-
 })
 
 app.get('/comments', async (req, res) => {
@@ -63,7 +62,7 @@ app.get('/gallery', async (req, res) => {
 })
 
 app.get('/test', (req, res) => {
-  res.json("HI");
+  res.json("HI helloo~");
 });
 
 const server = app.listen(port, () => {
