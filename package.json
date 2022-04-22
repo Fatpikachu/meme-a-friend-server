@@ -11,7 +11,7 @@
     "cors": "^2.8.5",
     "emailjs": "^2.2.0",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "react-scripts": "3.0.1",
     "smtp-server": "^3.5.0",
     "twilio": "^3.32.0"
